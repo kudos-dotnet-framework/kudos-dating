@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Authors>Pietro Terracciano - https://it.linkedin.com/in/pietroterracciano - pterracciano95@gmail.com</Authors>
+        <TargetFramework>net8.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <ImplicitUsings>disabled</ImplicitUsings>
+        <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
+        <Nullable>enable</Nullable>
+        <Configurations>Debug;Release</Configurations>
+        <Version>0.25.1.22</Version>
+        <ReleaseVersion>0.25.1.22</ReleaseVersion>
+        <SynchReleaseVersion>false</SynchReleaseVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <Optimize>false</Optimize>
+          <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <Optimize>true</Optimize>
+        <WarningLevel>0</WarningLevel>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Types\" />
+    <None Remove="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Types\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kudos.Coring\Kudos.Coring.csproj" />
+    <ProjectReference Include="..\Kudos.Threading\Kudos.Threading.csproj" />
+  </ItemGroup>
+</Project>
